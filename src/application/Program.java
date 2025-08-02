@@ -34,7 +34,6 @@ public class Program {
 			produtos.add(new Produto(codigo, nome, preco, quantidade));
 		}
 
-		System.out.println();
 		System.out.println("Menu:");
 		System.out.println("1 - Listar todos os produtos:");
 		System.out.println("2 - Adicionar estoque:");
@@ -42,6 +41,19 @@ public class Program {
 		System.out.println("0 - Sair:");
 		System.out.print("Escolha uma opção: ");
 		int opcao = sc.nextInt();
+		
+		switch(opcao) {
+			case 1:
+				System.out.println("---Lista de produtos---");
+				for(Produto p : produtos) {
+					System.out.println(p);
+					System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
+					System.out.println("---------------------------------");
+				}
+				
+		}
+
+
 
 		sc.close();
 
