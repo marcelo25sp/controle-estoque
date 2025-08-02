@@ -14,4 +14,55 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	public double valorTotalNoEstoque() {
+		return preco * quantidade;
+	}
+
+	public void adicionarEstoque(int quantidade) {
+		this.quantidade += quantidade;
+	}
+	
+	public void removerEstoque(int quantidade) {
+		this.quantidade -= quantidade;
+	}
+	
+	public String toString() {
+		return "Código do produto: " + codigo
+			 + "\nNome: " + nome
+			 + "\nPreço: " + String.format("R$ %.2f%n", preco)
+			 + "\nQuantidade: " + quantidade
+			 + " unidades";
+	}
 }
