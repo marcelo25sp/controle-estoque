@@ -1,20 +1,18 @@
-# Arquivos compilados Java
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Compilação
+/bin/
+/target/
+
+# Arquivos compilados
 *.class
 
-# Diretórios de build (se usar Maven, Gradle, etc)
-target/
-bin/
-build/
+# Logs
+*.log
 
-# Arquivos temporários do sistema
+# Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
-
-# Configurações do IDE/editor
-.vscode/
-.idea/
-*.iml
-
-# Logs e arquivos temporários
-*.log
-*.tmp
