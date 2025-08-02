@@ -62,7 +62,7 @@ public class Produto {
 		return "Código do produto: " + codigo
 			 + "\nNome: " + nome
 			 + "\nPreço: " + String.format("R$ %.2f%n", preco)
-			 + "\nQuantidade: " + quantidade
+			 + "Quantidade: " + quantidade
 			 + " unidades";
 	}
 }
