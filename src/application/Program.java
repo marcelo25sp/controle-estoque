@@ -41,19 +41,31 @@ public class Program {
 		System.out.println("0 - Sair:");
 		System.out.print("Escolha uma opção: ");
 		int opcao = sc.nextInt();
-		
-		switch(opcao) {
-			case 1:
-				System.out.println("---Lista de produtos---");
-				for(Produto p : produtos) {
-					System.out.println(p);
-					System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
-					System.out.println("---------------------------------");
+
+		switch (opcao) {
+		case 1:
+			System.out.println("---Lista de produtos---");
+			for (Produto p : produtos) {
+				System.out.println(p);
+				System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
+				System.out.println("---------------------------------");
+			}
+			break;
+
+		case 2:
+			System.out.println("---Adicionar estoque---");
+			System.out.print("Informe o código do produto: ");
+			int codAdd = sc.nextInt();
+			System.out.print("Informe a quantidade a ser adicionada: ");
+			int qtdAdd = sc.nextInt();
+			for (Produto p : produtos) {
+				if (p.getCodigo() == codAdd) {
+					p.adicionarEstoque(qtdAdd);
+					System.out.println("Estoque atualizado com sucesso!");
 				}
-				
+			}
+			break;
 		}
-
-
 
 		sc.close();
 
