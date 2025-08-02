@@ -34,6 +34,15 @@ public class Program {
 			produtos.add(new Produto(codigo, nome, preco, quantidade));
 		}
 
+		System.out.println();
+		System.out.println("Menu:");
+		System.out.println("1 - Listar todos os produtos:");
+		System.out.println("2 - Adicionar estoque:");
+		System.out.println("3 - Remover estoque:");
+		System.out.println("0 - Sair:");
+		System.out.print("Escolha uma opção: ");
+		int opcao = sc.nextInt();
+
 		sc.close();
 
 	}
