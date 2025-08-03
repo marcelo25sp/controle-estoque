@@ -51,7 +51,6 @@ public class Program {
 				System.out.println("---------------------------------");
 			}
 			break;
-
 		case 2:
 			System.out.println("---Adicionar estoque---");
 			System.out.print("Informe o código do produto: ");
@@ -65,6 +64,19 @@ public class Program {
 				}
 			}
 			break;
+		case 3:
+			System.out.println("---Remover estoque---");
+			System.out.print("Informe o código de produto: ");
+			int codRemove = sc.nextInt();
+			System.out.print("Informe a quantidade a ser removida: ");
+			int qtdRemove = sc.nextInt();
+			for(Produto p : produtos) {
+				if(p.getCodigo() == codRemove) {
+					p.removerEstoque(qtdRemove);
+					System.out.println("Estoque atualizado com sucesso!");
+				}
+			}
+			break;			
 		}
 
 		sc.close();
