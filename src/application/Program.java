@@ -76,7 +76,8 @@ public class Program {
 					System.out.println("Estoque atualizado com sucesso!");
 				}
 			}
-			break;			
+			break;
+			
 		}
 
 		sc.close();
