@@ -70,14 +70,16 @@ public class Program {
 			int codRemove = sc.nextInt();
 			System.out.print("Informe a quantidade a ser removida: ");
 			int qtdRemove = sc.nextInt();
-			for(Produto p : produtos) {
-				if(p.getCodigo() == codRemove) {
+			for (Produto p : produtos) {
+				if (p.getCodigo() == codRemove) {
 					p.removerEstoque(qtdRemove);
 					System.out.println("Estoque atualizado com sucesso!");
 				}
 			}
 			break;
-			
+		case 0:
+			System.out.println("Encerrando o programa...");
+			break;
 		}
 
 		sc.close();
