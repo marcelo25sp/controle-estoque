@@ -34,53 +34,58 @@ public class Program {
 			produtos.add(new Produto(codigo, nome, preco, quantidade));
 		}
 
-		System.out.println("Menu:");
-		System.out.println("1 - Listar todos os produtos:");
-		System.out.println("2 - Adicionar estoque:");
-		System.out.println("3 - Remover estoque:");
-		System.out.println("0 - Sair:");
-		System.out.print("Escolha uma opção: ");
-		int opcao = sc.nextInt();
 
-		switch (opcao) {
-		case 1:
-			System.out.println("---Lista de produtos---");
-			for (Produto p : produtos) {
-				System.out.println(p);
-				System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
-				System.out.println("---------------------------------");
-			}
-			break;
-		case 2:
-			System.out.println("---Adicionar estoque---");
-			System.out.print("Informe o código do produto: ");
-			int codAdd = sc.nextInt();
-			System.out.print("Informe a quantidade a ser adicionada: ");
-			int qtdAdd = sc.nextInt();
-			for (Produto p : produtos) {
-				if (p.getCodigo() == codAdd) {
-					p.adicionarEstoque(qtdAdd);
-					System.out.println("Estoque atualizado com sucesso!");
+		int opcao;
+		do {
+			System.out.println("Menu:");
+			System.out.println("1 - Listar todos os produtos:");
+			System.out.println("2 - Adicionar estoque:");
+			System.out.println("3 - Remover estoque:");
+			System.out.println("0 - Sair:");
+			System.out.print("Escolha uma opção: ");
+
+			opcao = sc.nextInt();
+			
+			switch (opcao) {
+			case 1:
+				System.out.println("---Lista de produtos---");
+				for (Produto p : produtos) {
+					System.out.println(p);
+					System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
+					System.out.println("---------------------------------");
 				}
-			}
-			break;
-		case 3:
-			System.out.println("---Remover estoque---");
-			System.out.print("Informe o código de produto: ");
-			int codRemove = sc.nextInt();
-			System.out.print("Informe a quantidade a ser removida: ");
-			int qtdRemove = sc.nextInt();
-			for (Produto p : produtos) {
-				if (p.getCodigo() == codRemove) {
-					p.removerEstoque(qtdRemove);
-					System.out.println("Estoque atualizado com sucesso!");
+				break;
+			case 2:
+				System.out.println("---Adicionar estoque---");
+				System.out.print("Informe o código do produto: ");
+				int codAdd = sc.nextInt();
+				System.out.print("Informe a quantidade a ser adicionada: ");
+				int qtdAdd = sc.nextInt();
+				for (Produto p : produtos) {
+					if (p.getCodigo() == codAdd) {
+						p.adicionarEstoque(qtdAdd);
+						System.out.println("Estoque atualizado com sucesso!");
+					}
 				}
-			}
-			break;
-		case 0:
-			System.out.println("Encerrando o programa...");
-			break;
-		}
+				break;
+			case 3:
+				System.out.println("---Remover estoque---");
+				System.out.print("Informe o código de produto: ");
+				int codRemove = sc.nextInt();
+				System.out.print("Informe a quantidade a ser removida: ");
+				int qtdRemove = sc.nextInt();
+				for (Produto p : produtos) {
+					if (p.getCodigo() == codRemove) {
+						p.removerEstoque(qtdRemove);
+						System.out.println("Estoque atualizado com sucesso!");
+					}
+				}
+				break;
+			case 0:
+				System.out.println("Encerrando o programa...");
+				break;
+			}			
+		} while (opcao != 0);
 
 		sc.close();
 
