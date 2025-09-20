@@ -56,13 +56,16 @@ public class Program {
 			switch (opcao) {
 
 			case 1:
-				// Exibe a lista de produtos e seus valores no estoque
+				// Exibe a lista de produtos,seus valores no estoque e o valor total geral
 				System.out.println("---Lista de produtos---");
+				double totalGeral = 0.0;
 				for (Produto p : produtos) {
 					System.out.println(p);
 					System.out.printf("Valor total no estoque: R$ %.2f%n", p.valorTotalNoEstoque());
 					System.out.println("---------------------------------");
+					totalGeral += p.valorTotalNoEstoque();
 				}
+				System.out.printf("Valor total geral no estoque: R$ %.2f%n", totalGeral);
 				break;
 
 			case 2:
@@ -99,6 +102,7 @@ public class Program {
 					}
 				}
 				break;
+				
 			case 0:
 				// comando para o encerramento do programa
 				System.out.println("Encerrando o programa...");
