@@ -20,7 +20,7 @@ public class Produto {
 		this.preco = preco;
 		this.quantidade = quantidade;
 	}
-	
+
 	// Métodos getters e setters para acessar e modificar os atributos do produto
 
 	public int getCodigo() {
@@ -54,9 +54,9 @@ public class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	// Métodos para adicionar, remover e calcular o valor total do estoque 
-	
+
+	// Métodos para adicionar, remover e calcular o valor total do estoque
+
 	public double valorTotalNoEstoque() {
 		return preco * quantidade;
 	}
@@ -64,17 +64,20 @@ public class Produto {
 	public void adicionarEstoque(int quantidade) {
 		this.quantidade += quantidade;
 	}
+
 	
 	public void removerEstoque(int quantidade) {
-		this.quantidade -= quantidade;
+		if (quantidade <= this.quantidade) { // estrutura de decisão (if-else) para impedir remoção acima do estoque disponível
+			this.quantidade -= quantidade; 
+		} else {
+			System.out.println("Quantidade inválida! Estoque insuficiente!");
+		}
 	}
-	
-	// Método que mostra os dados formatados do produto(código, nome, preço e quantidade)
+
+	// Método que mostra os dados formatados do produto(código, nome, preço e
+	// quantidade)
 	public String toString() {
-		return "Código do produto: " + codigo
-			 + "\nNome: " + nome
-			 + "\nPreço: " + String.format("R$ %.2f%n", preco)
-			 + "Quantidade: " + quantidade
-			 + " unidades";
+		return "Código do produto: " + codigo + "\nNome: " + nome + "\nPreço: " + String.format("R$ %.2f%n", preco)
+				+ "Quantidade: " + quantidade + " unidades";
 	}
 }
