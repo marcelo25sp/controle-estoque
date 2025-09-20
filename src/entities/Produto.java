@@ -21,15 +21,10 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	// Métodos getters e setters para acessar e modificar os atributos do produto
-
+	// Métodos getters(para acessar os atributos do produto) e setters (para modificar os atributos nome e preço do produto)
 	public int getCodigo() {
 		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
+	}	
 
 	public String getNome() {
 		return nome;
@@ -49,14 +44,10 @@ public class Produto {
 
 	public int getQuantidade() {
 		return quantidade;
-	}
+	}		
 
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
 
 	// Métodos para adicionar, remover e calcular o valor total do estoque
-
 	public double valorTotalNoEstoque() {
 		return preco * quantidade;
 	}
