@@ -11,12 +11,18 @@ Este projeto Java simula um sistema simples de controle de estoque, permitindo a
 
 - Java 17
 - Eclipse IDE
+- Paradigmas OOP
 
 ## 📄 Funcionalidades
 
 - Cadastro de produtos com código, nome, preço e quantidade em estoque.
 - Listagem de todos os produtos com informações completas.
 - Adição e remoção de unidades do estoque com verificação de disponibilidade.
+- Menu interativo com as opções:
+   1. Listar produtos: mostra todos os produtos cadastrados, seus valores no estoque e o valor total geral.
+   2. Adicionar estoque: localiza um produto pelo código e adiciona a quantidade informada.
+   3. Remover estoque: localiza um produto pelo código e remove a quantidade informada (com validação para não ultrapassar o disponível).
+   4. Sair: encerra o programa.
 
 ## 📦 Estrutura
 
@@ -26,34 +32,64 @@ Este projeto Java simula um sistema simples de controle de estoque, permitindo a
 ## ✅ Exemplo de execução
 
 ```
-==== MENU ====
-1 - Listar produtos
+Entre com o número de produtos a ser cadastrados: 2
+
+Digite os dados do produto:
+Código: 101
+Nome: Notebook
+Preço: 3500.00
+Quantidade: 5
+
+Digite os dados do produto:
+Código: 102
+Nome: Mouse
+Preço: 150.00
+Quantidade: 10
+
+Menu:
+1 - Listar todos os produtos
 2 - Adicionar estoque
 3 - Remover estoque
-4 - Sair
+0 - Sair
 Escolha uma opção: 1
-Produto: Arroz | Preço: R$ 20.00 | Quantidade em estoque: 8
 
-
-==== MENU ====
-1 - Listar produtos
-2 - Adicionar estoque
-3 - Remover estoque
-4 - Sair
-Escolha uma opção: 3
-Digite o nome do produto que deseja remover do estoque: Arroz
-Digite a quantidade a ser removida: 2
-Estoque atualizado com sucesso.
-
-==== MENU ====
-1 - Listar produtos
-2 - Adicionar estoque
-3 - Remover estoque
-4 - Sair
-Escolha uma opção: 4
-Encerrando programa...
 ```
+---Lista de produtos---
+Código do produto: 101
+Nome: Notebook
+Preço: R$ 3500.00
+Quantidade: 5 unidades
+Valor total no estoque: R$ 17500.00
+---------------------------------
+Código do produto: 102
+Nome: Mouse
+Preço: R$ 150.00
+Quantidade: 10 unidades
+Valor total no estoque: R$ 1500.00
+---------------------------------
+Valor total geral no estoque: R$ 19000.00
+
+
 
 ---
 
-Projeto desenvolvido como parte do aprendizado de Java e lógica de programação.
+## 🔑 Conceitos Praticados
+
+- Encapsulamento (atributos privados + getters e setters)
+- Construtores
+- Métodos de instância
+- Sobrescrita do método `toString`
+- Estruturas de decisão e repetição
+- Boas práticas de versionamento com Git (commits pequenos e descritivos)
+
+---
+
+## 📌 Próximos Passos (possíveis melhorias)
+
+- Persistência dos dados em arquivo ou banco de dados.  
+- Implementar atualização de nome e preço dos produtos.  
+- Adicionar tratamento de exceções para entradas inválidas.  
+- Interface gráfica ou API para integração.  
+
+
+
