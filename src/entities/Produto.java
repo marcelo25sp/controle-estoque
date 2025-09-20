@@ -77,7 +77,9 @@ public class Produto {
 	// Método que mostra os dados formatados do produto(código, nome, preço e
 	// quantidade)
 	public String toString() {
-		return "Código do produto: " + codigo + "\nNome: " + nome + "\nPreço: " + String.format("R$ %.2f%n", preco)
+		return "Código do produto: " + codigo 
+				+ "\nNome: " + nome 
+				+ "\nPreço: " + String.format("R$ %.2f%n", preco)
 				+ "Quantidade: " + quantidade + " unidades";
 	}
 }
