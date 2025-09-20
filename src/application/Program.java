@@ -21,7 +21,7 @@ public class Program {
 
 		System.out.print("Entre com o número de produtos a ser cadastrados: ");
 		int n = sc.nextInt();
-		
+
 		// Lista para armazenar os produtos cadastrados
 		List<Produto> produtos = new ArrayList<>();
 
@@ -52,8 +52,9 @@ public class Program {
 			System.out.print("Escolha uma opção: ");
 
 			opcao = sc.nextInt();
-			
+
 			switch (opcao) {
+
 			case 1:
 				// Exibe a lista de produtos e seus valores no estoque
 				System.out.println("---Lista de produtos---");
@@ -63,20 +64,27 @@ public class Program {
 					System.out.println("---------------------------------");
 				}
 				break;
+
 			case 2:
-				// Adiciona quantidade ao estoque 
+				// Adiciona quantidade ao estoque
 				System.out.println("---Adicionar estoque---");
 				System.out.print("Informe o código do produto: ");
 				int codAdd = sc.nextInt();
 				System.out.print("Informe a quantidade a ser adicionada: ");
 				int qtdAdd = sc.nextInt();
+				boolean encontrado = false;
 				for (Produto p : produtos) {
 					if (p.getCodigo() == codAdd) {
 						p.adicionarEstoque(qtdAdd);
 						System.out.println("Estoque atualizado com sucesso!");
+						encontrado = true;
+					}
+					if (encontrado == false) {
+						System.out.println("Produto não encontrado");
 					}
 				}
 				break;
+
 			case 3:
 				// Remove quantidade do estoque
 				System.out.println("---Remover estoque---");
@@ -95,7 +103,7 @@ public class Program {
 				// comando para o encerramento do programa
 				System.out.println("Encerrando o programa...");
 				break;
-			}			
+			}
 		} while (opcao != 0);
 
 		sc.close();
