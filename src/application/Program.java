@@ -77,9 +77,8 @@ public class Program {
 				int codAdd = sc.nextInt();
 				System.out.print("Informe a quantidade a ser adicionada: ");
 				int qtdAdd = sc.nextInt();
-				boolean encontrado = false;
-				
-				// Adiciona a quantidade ao estoque com a condição de o código informado do produto ser existente 
+				boolean encontrado = false;				
+				// Verifica a condição de o código informado do produto ser existente 
 				for (Produto p : produtos) {
 					if (p.getCodigo() == codAdd) {
 						p.adicionarEstoque(qtdAdd);
@@ -93,17 +92,23 @@ public class Program {
 				break;
 
 			case 3:
-				// Remove quantidade do estoque
+				// Remove a quantidade do estoque 
 				System.out.println("---Remover estoque---");
 				System.out.print("Informe o código de produto: ");
 				int codRemove = sc.nextInt();
 				System.out.print("Informe a quantidade a ser removida: ");
 				int qtdRemove = sc.nextInt();
+				encontrado = false;		
+				// Verifica a condição de o código informado do produto ser existente
 				for (Produto p : produtos) {
 					if (p.getCodigo() == codRemove) {
 						p.removerEstoque(qtdRemove);
 						System.out.println("Estoque atualizado com sucesso!");
+						encontrado = true;
 					}
+				}
+				if(encontrado == false) {
+					System.out.println("Produto não encontrado");
 				}
 				break;
 				
