@@ -16,7 +16,9 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		Locale.setDefault(Locale.US);
+		// Define o padrão de ponto flutuante como o padrão americano (ponto ao invés de vírgula)
+		Locale.setDefault(Locale.US); 
+		
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Entre com o número de produtos a ser cadastrados: ");
@@ -76,15 +78,17 @@ public class Program {
 				System.out.print("Informe a quantidade a ser adicionada: ");
 				int qtdAdd = sc.nextInt();
 				boolean encontrado = false;
+				
+				// Adiciona a quantidade ao estoque com a condição de o código informado do produto ser existente 
 				for (Produto p : produtos) {
 					if (p.getCodigo() == codAdd) {
 						p.adicionarEstoque(qtdAdd);
 						System.out.println("Estoque atualizado com sucesso!");
 						encontrado = true;
-					}
-					if (encontrado == false) {
-						System.out.println("Produto não encontrado");
-					}
+					}					
+				}
+				if (encontrado == false) {
+					System.out.println("Produto não encontrado");
 				}
 				break;
 
